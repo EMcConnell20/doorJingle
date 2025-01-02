@@ -144,7 +144,12 @@ template <unsigned int TEMPO, unsigned int LENGTH> struct Song {
   * Note macros will be played in the order they're listed.
   * Rests cound as notes, so don't forget to count them too.
 
-3. Use the `COMPOSE` macro to create the song and .
+3. Use the `COMPOSE` macro to create the song.
+  * The first argument should be the name of the array of note macros.
+  * The second argument should be the name of the song.
+  * The third argument should be what you want the play function to be named.
+  * The fourth argument should be the tempo of the song.
+  * The fifth argument should be the length of the song.
 
 P.S.
 You have to make a variable for the note macros; you can't just pass the list as an argument.
@@ -168,6 +173,7 @@ COMPOSE(c_scale_notes, C_Scale, play_c_scale, 60, 15)
 
 
 void setup() {
+  play_vitality();
   play_vitality();
 }
 
